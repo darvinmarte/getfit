@@ -13,7 +13,6 @@
             <h1>GET FIT</h1>
         </section>
     </main>
-<script src="./assets/js/script.js"></script>
 
 <div class="container bmiInput">
     <div class="row">
@@ -32,15 +31,19 @@
         <div class="col-12 col-md-6">
             <h2>Input your data below to see your Calories Burned</h2>
             <select name="activity" id="activity">
-                <option value="none">Select an activity!</option>
+                <option value="">Select an activity!</option>
                 <option value="run">Run</option>
                 <option value="lifting">Weight Lifting</option>
             </select>
             <input class="actWeight" type="text" placeholder="Enter Weight" aria-label="default input example">
             <input class="duration" type="text" placeholder="Enter Duration" aria-label="default input example">
-            <button class="calBurnBtn btn-primary">Calculate!</button>
+            <button class="calBurnBtn btn-primary" id="calBurnBtn">Calculate!</button>
         </div>
     </div>
+    <div class="row" id="excerciseDiv"> 
+        <!-- create cards or rows -->
+    </div>
 </div>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>

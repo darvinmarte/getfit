@@ -13,6 +13,8 @@ let inputEl2 = document.querySelector(".calInput");
 let calBtn = document.getElementById("calBurnBtn");
 const activity = document.querySelector('#activity')
 let exceriseDiv = document.querySelector('#excerciseDiv')
+let weightEl = document.querySelector('.actWeight')
+let durrEl = document.querySelector('.duration')
 
 //Fetch bmiInput API
 //RESPONSE
@@ -28,7 +30,7 @@ let exceriseDiv = document.querySelector('#excerciseDiv')
 //store it in local storage 
 
 async function getCal() {
-    const url = 'https://calories-burned-by-api-ninjas.p.rapidapi.com/v1/caloriesburned?activity=' + activity.value ;
+    const url = 'https://calories-burned-by-api-ninjas.p.rapidapi.com/v1/caloriesburned?activity=' + activity.value + '&weight=' + weightEl.value + '&duration=' + durrEl.value;
     console.log(activity.value)
 const options = {
 	method: 'GET',

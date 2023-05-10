@@ -13,45 +13,44 @@
             <h1>GET FIT</h1>
         </section>
     </main>
-    
-    <div class="container bmiInput">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <h2>Input your data below to see your BMI!</h2>
-                <input class="age" type="text" placeholder="Enter Age" aria-label="default input example">
-                <input class="height" type="text" placeholder="Enter Height" aria-label="default input example">
-                <input class="weight" type="text" placeholder="Enter Weight" aria-label="default input example">
-                <input class="gender" type="text" placeholder="Enter Gender" aria-label="default input example">
-                <select name="activity_level" id="activity_level">
-                    <option value="none">Select your activity level!</option>
-                    <option value="Easy">Light</option>
-                    <option value="Moderate">Moderate</option>
-                    <option value="Heavy">Heavy</option>
-                </select>
-                <button class="calcBmiBtn btn-primary">Calculate your BMI!</button>
-            </div>
-        </div>
-    
-    <div class="row" id="exerciseDiv">
-        <!--create cards-->
-    </div>
-    </div>
-    
-    <div class="container calInput">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <h2>Input your data below to see your Calories Burned</h2>
-                <select name="activity" id="activity">
-                    <option value="none">Select an activity!</option>
-                    <option value="run">Run</option>
-                    <option value="lifting">Weight Lifting</option>
-                </select>
-                <input class="actWeight" type="text" placeholder="Enter Weight" aria-label="default input example">
-                <input class="duration" type="text" placeholder="Enter Duration" aria-label="default input example">
-                <button class="calBurnBtn btn-primary">Calculate!</button>
-            </div>
+
+<div class="container bmiInput">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h2>Input your data below to see your BMI!</h2>
+            <input class="height" type="text" placeholder="Enter Height" aria-label="default input example">
+            <input class="weight" type="text" placeholder="Enter Weight" aria-label="default input example">
+            <input class="age" type="text" placeholder="Enter Age" aria-label="default input example">
+            <input class="gender" type="text" placeholder="Enter Gender" aria-label="default input example">
+            <select name="activity_level" id="activity_level">
+                <option value="none">Select your activity level!</option>
+                <option value="Easy">Light</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Heavy">Heavy</option>
+            </select>
+            <button class="calcBmiBtn btn-primary">Calculate your BMI!</button>
         </div>
     </div>
-    <script src="./assets/js/script.js"></script>
+</div>
+
+<div class="container calInput">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h2>Input your data below to see your Calories Burned</h2>
+            <select name="activity" id="activity">
+                <option value="">Select an activity!</option>
+                <option value="run">Run</option>
+                <option value="lifting">Weight Lifting</option>
+            </select>
+            <input class="actWeight" type="text" placeholder="Enter Weight" aria-label="default input example">
+            <input class="duration" type="text" placeholder="Enter Duration" aria-label="default input example">
+            <button class="calBurnBtn btn-primary" id="calBurnBtn">Calculate!</button>
+        </div>
+    </div>
+    <div class="row" id="excerciseDiv"> 
+        <!-- create cards or rows -->
+    </div>
+</div>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>

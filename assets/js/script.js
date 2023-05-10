@@ -6,7 +6,11 @@
 // press a #calBurn button
 // presented with calories burned based on activity
 
-
+let inputEl1 = document.querySelector(".bmiInput");
+let bmiBtn = document.querySelector(".calcBmiBtn");
+// let bmiRes = document.querySelector(".");
+let inputEl2 = document.querySelector(".calInput");
+let calBurn = document.querySelector(".calBtn")
 
 //Fetch bmiInput API
 //RESPONSE

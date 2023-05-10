@@ -31,7 +31,11 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <h2>Input your data below to see your Calories Burned</h2>
-            <input class="activity" type="text" placeholder="Enter Activity" aria-label="default input example">
+            <select name="activity" id="activity">
+                <option value="none">Select an activity!</option>
+                <option value="run">Run</option>
+                <option value="lifting">Weight Lifting</option>
+            </select>
             <input class="actWeight" type="text" placeholder="Enter Weight" aria-label="default input example">
             <input class="duration" type="text" placeholder="Enter Duration" aria-label="default input example">
             <button class="calBurnBtn btn-primary">Calculate!</button>

@@ -69,15 +69,22 @@ try {
 	const response = await fetch(url, options);
 	const result = await response.json();
 	console.log(result);
-    result.forEach(exercise => {
-        //create element 
-        let nameEl = document.createElement('p')
-        nameEl.textContent = exercise.name
-        exceriseDiv.append(nameEl)
-    });
+
+        let calHrEl = document.createElement('p')
+        calHrEl.textContent = 'This excerise burns ' + result[0].calories_per_hour + ' calories an hour.'
+        exceriseDiv.append(calHrEl)
+
+        let durrMinEl = document.createElement('p')
+        durrMinEl.textContent = 'You did X for ' + result[0].duration_minutes + ' minutes.'
+        exceriseDiv.append(durrMinEl)
+
+        let totCal = document.createElement('p')
+        totCal.textContent = 'Your burned ' + result[0].total_calories + ' calories in ' + result[0].duration_minutes + ' minutes. Great Job!'
+        exceriseDiv.append(totCal)
+
 
 } catch (error) {
-	console.error(error);
+	// console.error(error);
 }
 }
 

@@ -21,7 +21,32 @@ let durrEl = document.querySelector('.duration')
 //DATA
 //PRESENT THE RESULTS FROM bmiInput on page
 //store it in local storage 
+const repoList = document.querySelector('ul');
+const fetchButton = document.getElementById('fetch-button');
 
+//getApi function is called when the fetchButton is clicked
+
+async function getBmi() {
+    const url = 'https://fitness-calculator.p.rapidapi.com/dailycalorie?&units=imperial&age=25&height=180&weight=70&gender=male&activitylevel=level_1';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'dec3f09420msh8e059b9b79497f5p1aa256jsn405523c4c89c',
+            'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        console.log(result);
+        
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+bmiBtn.addEventListener('click',getBmi);
 
 //Fetch calInuput API
 //RESPONSE
@@ -59,4 +84,4 @@ try {
 calBtn.addEventListener('click',getCal)
 
 //Localstorage
-//get and set item
+//get and set item 

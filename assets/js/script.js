@@ -13,6 +13,8 @@ let inputEl2 = document.querySelector(".calInput");
 let calBtn = document.getElementById("calBurnBtn");
 const activity = document.querySelector('#activity')
 let exceriseDiv = document.querySelector('#excerciseDiv')
+let weightEl = document.querySelector('.actWeight')
+let durrEl = document.querySelector('.duration')
 
 //Fetch bmiInput API
 //RESPONSE
@@ -38,16 +40,7 @@ async function getBmi() {
         const response = await fetch(url, options);
         const result = await response.text();
         console.log(result);
-
-
-
-        // result.forEach(exercise => {
-        //     // create element
-        //     let nameEl = document.createElement("p")
-        //     nameEl.textContent = exercise.name
-        //     exercise.append(nameEl)
-        // });
-
+        
     } catch (error) {
         console.error(error);
     }
@@ -62,7 +55,7 @@ bmiBtn.addEventListener('click',getBmi);
 //store it in local storage 
 
 async function getCal() {
-    const url = 'https://calories-burned-by-api-ninjas.p.rapidapi.com/v1/caloriesburned?activity=' + activity.value ;
+    const url = 'https://calories-burned-by-api-ninjas.p.rapidapi.com/v1/caloriesburned?activity=' + activity.value + '&weight=' + weightEl.value + '&duration=' + durrEl.value;
     console.log(activity.value)
 const options = {
 	method: 'GET',
@@ -76,15 +69,22 @@ try {
 	const response = await fetch(url, options);
 	const result = await response.json();
 	console.log(result);
-    result.forEach(exercise => {
-        //create element 
-        let nameEl = document.createElement('p')
-        nameEl.textContent = exercise.name
-        exceriseDiv.append(nameEl)
-    });
+
+        let calHrEl = document.createElement('p')
+        calHrEl.textContent = 'This excerise burns ' + result[0].calories_per_hour + ' calories an hour.'
+        exceriseDiv.append(calHrEl)
+
+        let durrMinEl = document.createElement('p')
+        durrMinEl.textContent = 'You did X for ' + result[0].duration_minutes + ' minutes.'
+        exceriseDiv.append(durrMinEl)
+
+        let totCal = document.createElement('p')
+        totCal.textContent = 'Your burned ' + result[0].total_calories + ' calories in ' + result[0].duration_minutes + ' minutes. Great Job!'
+        exceriseDiv.append(totCal)
+
 
 } catch (error) {
-	console.error(error);
+	// console.error(error);
 }
 }
 

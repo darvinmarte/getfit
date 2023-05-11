@@ -8,11 +8,11 @@
 
 let inputEl1 = document.querySelector(".bmiInput");
 let bmiBtn = document.querySelector(".calcBmiBtn");
-// let bmiRes = document.querySelector(".");
+let bmiResDiv = document.querySelector("#bmiResDiv");
 let inputEl2 = document.querySelector(".calInput");
 let calBtn = document.getElementById("calBurnBtn");
-const activity = document.querySelector('#activity')
-let exceriseDiv = document.querySelector('#excerciseDiv')
+const activity = document.querySelector('#activity');
+let exceriseDiv = document.querySelector('#excerciseDiv');
 
 //Fetch bmiInput API
 //RESPONSE
@@ -38,15 +38,9 @@ async function getBmi() {
         const response = await fetch(url, options);
         const result = await response.text();
         console.log(result);
-
-
-
-        // result.forEach(exercise => {
-        //     // create element
-        //     let nameEl = document.createElement("p")
-        //     nameEl.textContent = exercise.name
-        //     exercise.append(nameEl)
-        // });
+        let bmiTotEl = document.createElement('p')
+        bmiTotEl.textContent = 'Your calculated BMI is '
+        bmiResDiv.append(bmiTotEl)
 
     } catch (error) {
         console.error(error);
@@ -77,7 +71,6 @@ try {
 	const result = await response.json();
 	console.log(result);
     result.forEach(exercise => {
-        //create element 
         let nameEl = document.createElement('p')
         nameEl.textContent = exercise.name
         exceriseDiv.append(nameEl)

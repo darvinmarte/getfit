@@ -21,9 +21,9 @@
 <div class="container bmiInput">
     <div class="row">
         <div class="col-12 col-6">
-            <h2>Input your data below to see your BMI!</h2>
-            <input class="height" type="text" placeholder="Enter Height" aria-label="default input example">
-            <input class="weight" type="text" placeholder="Enter Weight" aria-label="default input example">
+            <h2>Input your data below to see how to achieve your weight goals!</h2>
+            <input class="height" type="text" placeholder="Enter Height in cm" aria-label="default input example">
+            <input class="weight" type="text" placeholder="Enter Weight in lbs" aria-label="default input example">
             <input class="age" type="text" placeholder="Enter Age" aria-label="default input example">
             <select name ="gender" id="gender">
                 <option value="none">Select your gender</option>
@@ -36,8 +36,12 @@
                 <option value="level_2">Moderate</option>
                 <option value="level_3">Heavy</option>
             </select>
-            <button class="calcBmiBtn btn-primary">Calculate your BMI!</button>
+            <button class="calcBmiBtn btn-primary">Calculate your next steps!</button>
         </div>
+        <p id="metabolicRate"></p>
+        <p id="gainWeight"></p>
+        <p id="loseWeight"></p>
+        <p id="maintainWeight"></p>
     </div>
     <div class="row" id="bmiResDiv"> 
     </div>

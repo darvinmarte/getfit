@@ -11,10 +11,12 @@ h1{
 }
 
 .bmiInput{
+    border: black solid 5px;
     padding: 10px;
     margin: 10px;
 }
 .calInput{
-    padding: 10px;
+    border: black solid 5px;
+    padding: 15px;
     margin: 10px;
 }

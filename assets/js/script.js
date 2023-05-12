@@ -69,6 +69,9 @@ try {
 	const response = await fetch(url, options);
 	const result = await response.json();
 	console.log(result);
+     
+     // Store the result in local storage
+     localStorage.setItem('caloriesResults', JSON.stringify(result[0]));
 
         let calHrEl = document.createElement('p')
         calHrEl.textContent = 'This excerise burns ' + result[0].calories_per_hour + ' calories an hour.'
@@ -82,13 +85,15 @@ try {
         totCal.textContent = 'Your burned ' + result[0].total_calories + ' calories in ' + result[0].duration_minutes + ' minutes. Great Job!'
         exceriseDiv.append(totCal)
 
-
 } catch (error) {
 	// console.error(error);
 }
 }
 
 calBtn.addEventListener('click',getCal)
-
+const result = JSON.parse(localStorage.getItem('caloriesResults'));
 //Localstorage
 //get and set item 
+
+// localStorage.setItem('myKey', 'myValue');
+// let myValue = localStorage.getItem('myKey');

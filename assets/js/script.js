@@ -1,10 +1,10 @@
-// once user opens deployed application they are presented with a decent UI
-// user inputs height, weight, age, gender, activity level in first container .bmiInput
-// press a .calcBmi button 
-// presented with bmi results in second container .bmiRes
-// user inputs activity, weight and duration in container .calInput
-// press a #calBurn button
-// presented with calories burned based on activity
+// !once user opens deployed application they are presented with a decent UI
+// !user inputs height, weight, age, gender, activity level in first container .bmiInput
+// !press a .calcBmi button 
+// !presented with cal results in second container .bmiRes
+// !user inputs activity, weight and duration in container .calInput
+// !press a #calBurn button
+// !presented with calories burned based on activity
 
 let inputEl1 = document.querySelector(".bmiInput");
 let bmiBtn = document.querySelector(".calcBmiBtn");
@@ -21,15 +21,8 @@ let exceriseDiv = document.querySelector('#excerciseDiv')
 let weightEl = document.querySelector('.actWeight')
 let durrEl = document.querySelector('.duration')
 
-//Fetch bmiInput API
-//RESPONSE
-//DATA
-//PRESENT THE RESULTS FROM bmiInput on page
-//store it in local storage 
 const repoList = document.querySelector('ul');
 const fetchButton = document.getElementById('fetch-button');
-
-//getApi function is called when the fetchButton is clicked
 
 async function getBmi() {
     console.log (bmiHeightEl.value);
@@ -92,17 +85,14 @@ try {
      // Store the result in local storage
     localStorage.setItem('caloriesResults', JSON.stringify(result[0]));
 
-        let calHrEl = document.createElement('p')
+        let calHrEl = document.getElementById('calAnHour')
         calHrEl.textContent = 'This excerise burns ' + result[0].calories_per_hour + ' calories an hour.'
-        exceriseDiv.append(calHrEl)
 
-        let durrMinEl = document.createElement('p')
-        durrMinEl.textContent = 'You did ' + activity.value + ' for ' + result[0].duration_minutes + ' minutes.'
-        exceriseDiv.append(durrMinEl)
+        let durrMinEl = document.getElementById('durrationAct')
+        durrMinEl.textContent = activity.value + ' for ' + result[0].duration_minutes + ' minutes.'
 
-        let totCal = document.createElement('p')
+        let totCal = document.getElementById('totalCal')
         totCal.textContent = 'Your burned ' + result[0].total_calories + ' calories in ' + result[0].duration_minutes + ' minutes. Great Job!'
-        exceriseDiv.append(totCal)
 
 } catch (error) {
 	console.error(error);

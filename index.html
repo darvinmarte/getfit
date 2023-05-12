@@ -21,12 +21,16 @@
             <input class="height" type="text" placeholder="Enter Height" aria-label="default input example">
             <input class="weight" type="text" placeholder="Enter Weight" aria-label="default input example">
             <input class="age" type="text" placeholder="Enter Age" aria-label="default input example">
-            <input class="gender" type="text" placeholder="Enter Gender" aria-label="default input example">
-            <select name="activity_level" id="activity_level">
+            <select name ="gender" id="gender">
+                <option value="none">Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <select name="activityLevel" id="activityLevel">
                 <option value="none">Select your activity level!</option>
-                <option value="Easy">Light</option>
-                <option value="Moderate">Moderate</option>
-                <option value="Heavy">Heavy</option>
+                <option value="level_1">Light</option>
+                <option value="level_2">Moderate</option>
+                <option value="level_3">Heavy</option>
             </select>
             <button class="calcBmiBtn btn-primary">Calculate your BMI!</button>
         </div>

@@ -21,9 +21,14 @@
   </head>
   <body>
     <main>
-      <section>
-        <h1>GET FIT</h1>
-      </section>
+        <section>
+            <h1>GET FIT</h1>
+            <!-- <img src="./assets/images/image-1.png" class="img-fluid"></img>  -->
+        </section>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            What is BMR? How is it different from BMI?
+        </button>
+        
     </main>
 
     <div class="container bmiInput d-flex justify-content-center">
@@ -70,6 +75,12 @@
         <p id="loseWeight"></p>
         <p id="maintainWeight"></p>
       </div>
+    <section class="hidden" id="bmiResults" data-state="hidden">
+        <p id="bmrCalc"></p>
+        <p id="gainWeightCalc"></p>
+        <p id="loseWeightCalc"></p>
+        <p id="mainWeightCalc"></p>
+    </section>
       <div class="row" id="bmiResDiv"></div>
     </div>
 

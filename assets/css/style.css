@@ -23,11 +23,19 @@ h1{
 
 .bmiInput{
     display: flex;
-
     color: var(--coral);
     border: var(--gunmetal) solid 5px;
     border-radius: 25px;
     padding: 10px;
+    margin: 10px;
+}
+
+#bmiResults{
+    text-align: center;
+    color: var(--coral);
+    border: white 10px solid;
+    border-radius: 25px;
+    padding: 7px;
     margin: 10px;
 }
 .calInput{
@@ -40,7 +48,7 @@ h1{
 
 #calResults{
     text-align: center;
-    color: white;
+    color: var(--coral);
     border: white 10px solid;
     border-radius: 25px;
     padding: 7px;

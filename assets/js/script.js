@@ -1,11 +1,3 @@
-// !once user opens deployed application they are presented with a decent UI
-// !user inputs height, weight, age, gender, activity level in first container .bmiInput
-// !press a .calcBmi button 
-// !presented with cal results in second container .bmiRes
-// !user inputs activity, weight and duration in container .calInput
-// !press a #calBurn button
-// !presented with calories burned based on activity
-
 let inputEl1 = document.querySelector(".bmiInput");
 let bmiBtn = document.querySelector(".calcBmiBtn");
 let bmiResDiv = document.querySelector("#bmiResDiv");
@@ -23,26 +15,6 @@ let durrEl = document.querySelector('.duration')
 
 const repoList = document.querySelector('ul');
 const fetchButton = document.getElementById('fetch-button');
-
-
-const modal = document.getElementById("exampleModal");
-const btn = document.getElementById("btn");
-const span = document.getElementsByClassName("btn-close")[0];
-
-
-btn.onclick = function () {
-    modal.style.display = "block";
-}
-
-span.onclick = function () {
-    modal.style.display = "none";
-}
-
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 
 
 async function getBmi() {
@@ -92,6 +64,9 @@ async function getBmi() {
         let mainWeightEl = document.getElementById('maintainWeight')
         mainWeightEl.textContent = 'To main weight you would need to average ' + result.data.goals["maintain weight"] + ' calories a day.'
         
+        let resultsEl = document.getElementById('bmiResults')
+        resultsEl.classList.remove('hidden');
+        resultsEl.classList.add('show')
         
     } catch (error) {
         console.error(error);
@@ -119,22 +94,24 @@ try {
 	const response = await fetch(url, options);
 	const result = await response.json();
 	console.log(result);
-     // Store the result in local storage
     localStorage.setItem('caloriesResults', JSON.stringify(result[0]));
 
         let calHrEl = document.getElementById('calAnHour')
         calHrEl.textContent = 'This excerise burns ' + result[0].calories_per_hour + ' calories an hour.'
 
         let durrMinEl = document.getElementById('durrationAct')
-        durrMinEl.textContent = activity.value + ' for ' + result[0].duration_minutes + ' minutes.'
+        durrMinEl.textContent = 'You excersiced for ' + result[0].duration_minutes + ' minutes.'
 
         let totCal = document.getElementById('totalCal')
-        totCal.textContent = 'Your burned ' + result[0].total_calories + ' calories in ' + result[0].duration_minutes + ' minutes. Great Job!'
-
+        totCal.textContent = 'You burned ' + result[0].total_calories + ' calories in ' + result[0].duration_minutes + ' minutes. Great Job!'
+        
+        let resultsEl = document.getElementById('calResults')
+        resultsEl.classList.remove('hidden');
+        resultsEl.classList.add('show')
 } catch (error) {
 	console.error(error);
 }
 }
-
 calBtn.addEventListener('click',getCal)
+
 const result = JSON.parse(localStorage.getItem('caloriesResults'));

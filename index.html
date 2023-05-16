@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>GET FIT</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
         <section>
             <h1>GET FIT</h1>
@@ -21,75 +29,102 @@
             What is BMR? How is it different from BMI?
         </button>
         
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">BMI VS BMR</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p> BMR stands for "basal metabolic rate" and helps you determine the estimated baseline amount of calories your body needs to function and serves as a starting point to determine how many calories you may want to consume based on your goals. BMI refers to your "body mass index" </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Got it!</button>
-                        <button type="button" class="btn btn-primary">Let me see my next steps</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
 
-<div class="container bmiInput">
-    <div class="row">
+    <div class="container bmiInput">
+      <div class="row">
         <div class="col-12 col-6">
-            <h2>Input your data below to see how to achieve your weight goals!</h2>
-            <input class="height" type="text" placeholder="Enter Height in cm" aria-label="default input example">
-            <input class="weight" type="text" placeholder="Enter Weight in lbs" aria-label="default input example">
-            <input class="age" type="text" placeholder="Enter Age" aria-label="default input example">
-            <select name ="gender" id="gender">
-                <option value="none">Select your gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
-            <select name="activityLevel" id="activityLevel">
-                <option value="none">Select your activity level!</option>
-                <option value="level_1">Light</option>
-                <option value="level_2">Moderate</option>
-                <option value="level_3">Heavy</option>
-            </select>
-            <button class="calcBmiBtn btn-primary">Calculate your next steps!</button>
+          <h2>
+            Input your data below to see how to achieve your weight goals!
+          </h2>
+          <input
+            class="height"
+            type="text"
+            placeholder="Enter Height in cm"
+            aria-label="default input example"
+          />
+          <input
+            class="weight"
+            type="text"
+            placeholder="Enter Weight in lbs"
+            aria-label="default input example"
+          />
+          <input
+            class="age"
+            type="text"
+            placeholder="Enter Age"
+            aria-label="default input example"
+          />
+          <select name="gender" id="gender">
+            <option value="none">Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <select name="activityLevel" id="activityLevel">
+            <option value="none">Select your activity level!</option>
+            <option value="level_1">Light</option>
+            <option value="level_2">Moderate</option>
+            <option value="level_3">Heavy</option>
+          </select>
+          <button class="calcBmiBtn btn-primary">
+            Calculate your next steps!
+          </button>
         </div>
         <p id="metabolicRate"></p>
         <p id="gainWeight"></p>
         <p id="loseWeight"></p>
         <p id="maintainWeight"></p>
+      </div>
+    <section class="hidden" id="bmiResults" data-state="hidden">
+        <p id="bmrCalc"></p>
+        <p id="gainWeightCalc"></p>
+        <p id="loseWeightCalc"></p>
+        <p id="mainWeightCalc"></p>
+    </section>
+      <div class="row" id="bmiResDiv"></div>
     </div>
-    <div class="row" id="bmiResDiv"> 
-    </div>
-</div>
 
-<div class="container calInput">
-    <div class="row">
+    <div class="container calInput justify-content-center">
+      <div class="row">
         <div class="col-12 col-6">
-            <h2>Input your data below to see your calories burned!</h2>
-            <select name="activity" id="activity">
-                <option value="">Select an activity!</option>
-                <option value="run">Run</option>
-                <option value="lifting">Weight Lifting</option>
-            </select>
-            <input class="actWeight" type="text" placeholder="Enter Weight in LBs" aria-label="default input example">
-            <input class="duration" type="text" placeholder="Enter duration in minutes" aria-label="default input example">
-            <button class="calBurnBtn btn-primary" id="calBurnBtn">Calculate!</button>
+          <h2>Input your data below to see your calories burned!</h2>
+          <select name="activity" id="activity">
+            <option value="">Select an activity!</option>
+            <option value="run">Run</option>
+            <option value="lifting">Weight Lifting</option>
+            <option value="yoga">Yoga</option>
+            <option value="cycling">Cycling</option>
+            <option value="soccer">Soccer</option>
+            <option value="tennis">Tennis</option>
+            <option value="basketball">Basketball</option>
+            <option value="boxing">Boxing</option>
+          </select>
+          <input
+            class="actWeight"
+            type="text"
+            placeholder="Enter Weight in LBs"
+            aria-label="default input example"
+          />
+          <input
+            class="duration"
+            type="text"
+            placeholder="Enter duration in minutes"
+            aria-label="default input example"
+          />
+          <button class="calBurnBtn btn-primary" id="calBurnBtn">
+            Calculate!
+          </button>
         </div>
-        <p id="calAnHour"></p>
-        <p id="durrationAct"></p>
-        <p id="totalCal"></p>
-    </div>
-    <div class="row" id="excerciseDiv"> 
+        <section class="hidden" id="calResults" data-state="hidden">
+          <p id="calAnHour"></p>
+          <p id="durrationAct"></p>
+          <p id="totalCal"></p>
+        </section>
+      </div>
+      <div class="row" id="excerciseDiv">
         <!-- create cards or rows -->
+      </div>
     </div>
-</div>
-<script src="./assets/js/script.js"></script>
-</body>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>

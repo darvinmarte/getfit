@@ -23,7 +23,9 @@ https://darvinmarte.github.io/getfit/
 ![](./assets/images/)
 ## Credits
 
-N/A
+Rapid API
+- https://rapidapi.com/malaaddincelik/api/fitness-calculator/
+- https://rapidapi.com/apininjas/api/calories-burned-by-api-ninjas/
 
 ## License
 

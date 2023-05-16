@@ -20,3 +20,19 @@ h1{
     padding: 15px;
     margin: 10px;
 }
+
+#calResults{
+    text-align: center;
+    color: white;
+    border: white 10px solid;
+    padding: 7px;
+    margin: 10px;
+}
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
+}

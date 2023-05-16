@@ -15,7 +15,29 @@
     <main>
         <section>
             <h1>GET FIT</h1>
+            <!-- <img src="./assets/images/image-1.png" class="img-fluid"></img>  -->
         </section>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            What is BMR? How is it different from BMI?
+        </button>
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">BMI VS BMR</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p> BMR stands for "basal metabolic rate" and helps you determine the estimated baseline amount of calories your body needs to function and serves as a starting point to determine how many calories you may want to consume based on your goals. BMI refers to your "body mass index" </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Got it!</button>
+                        <button type="button" class="btn btn-primary">Let me see my next steps</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 <div class="container bmiInput">

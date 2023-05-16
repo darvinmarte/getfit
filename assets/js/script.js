@@ -24,6 +24,27 @@ let durrEl = document.querySelector('.duration')
 const repoList = document.querySelector('ul');
 const fetchButton = document.getElementById('fetch-button');
 
+
+const modal = document.getElementById("exampleModal");
+const btn = document.getElementById("btn");
+const span = document.getElementsByClassName("btn-close")[0];
+
+
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
 async function getBmi() {
     console.log (bmiHeightEl.value);
     console.log (bmiWeightEl.value);
@@ -34,13 +55,14 @@ async function getBmi() {
     const url = 'https://fitness-calculator.p.rapidapi.com/dailycalorie?&height=' + bmiHeightEl.value + '&weight=' + bmiWeightEl.value + '&age=' + bmiAgeEl.value + '&gender=' + bmiGenderEl.value + '&activitylevel=' + bmiActLvlEl.value;
     function convertWeight(weight) {
         return Math.round(weight / 2.20);
+        
     }
-
+    
     const weight = parseFloat(bmiWeightEl.value);
     const convertedWeight = convertWeight(weight);
-
+    
     console.log(convertedWeight);
-
+    
     const options = {
         method: 'GET',
         headers: {
@@ -48,29 +70,29 @@ async function getBmi() {
             'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
         }
     }
-
+    
     try {
         const response = await fetch(url, options);
         const result = await response.json();
         console.log(result);
         localStorage.setItem('bmiResults', JSON.stringify(result));
-
+        
         let bmiTotEl = document.getElementById('metabolicRate')
         bmiTotEl.textContent = 'Your basal metabolic rate would be ' + result.data.BMR
         
-
+        
         let gainWeightEl = document.getElementById('gainWeight')
         gainWeightEl.textContent = 'To gain weight you would need to average ' + result.data.goals["Weight gain"].calory + ' calories a day.'
-
-
+        
+        
         let loseWeightEl = document.getElementById('loseWeight')
         loseWeightEl.textContent = 'To lose weight you would need to average ' + result.data.goals["Weight loss"].calory + ' calories a day.'
-
-
+        
+        
         let mainWeightEl = document.getElementById('maintainWeight')
         mainWeightEl.textContent = 'To main weight you would need to average ' + result.data.goals["maintain weight"] + ' calories a day.'
-
-
+        
+        
     } catch (error) {
         console.error(error);
     }
@@ -79,6 +101,8 @@ async function getBmi() {
 
 bmiBtn.addEventListener('click',getBmi);
 const resultS = JSON.parse(localStorage.getItem('bmiResults'));
+
+
 
 async function getCal() {
     const url = 'https://calories-burned-by-api-ninjas.p.rapidapi.com/v1/caloriesburned?activity=' + activity.value + '&weight=' + weightEl.value + '&duration=' + durrEl.value;

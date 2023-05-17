@@ -25,6 +25,7 @@ async function getBmi() {
     console.log(bmiActLvlEl.value);
     bmiWeightEl.value = convertWeight(bmiWeightEl.value);
     const url = 'https://fitness-calculator.p.rapidapi.com/dailycalorie?&height=' + bmiHeightEl.value + '&weight=' + bmiWeightEl.value + '&age=' + bmiAgeEl.value + '&gender=' + bmiGenderEl.value + '&activitylevel=' + bmiActLvlEl.value;
+    
     function convertWeight(weight) {
         return Math.round(weight / 2.20);
 

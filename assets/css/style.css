@@ -22,24 +22,29 @@ header {
 h1 {
     display: flex;
     color: var(--gunmetal);
+    font-weight: bolder;
+    font-size: 800%;
     justify-content: center;
     padding: 5px;
-    margin-top: 110px;
+    margin-top: 75px;
 }
 
 img {
     text-align: center;
-    height: 25%;
+    height: 35%;
     width: 25%;
 }
 
 .bmiInput {
-    display: flex;
     color: var(--gunmetal);
     border: var(--gunmetal) solid 5px;
     border-radius: 25px;
     padding: 10px;
     margin: 10px;
+}
+
+.center{
+    margin: 25px;
 }
 
 #bmiResults {

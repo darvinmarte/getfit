@@ -15,71 +15,81 @@
 </head>
 
 <body>
-    <div class="container bmiInput d-flex justify-content-center">
-        <div class="row d-flex justify-content-center">
-            <div class="col-12 col-6">
-                <h2>
-                    Input your data below to see how to achieve your weight goals!
-                </h2>
-                <input class="height" type="text" placeholder="Enter Height in cm" aria-label="default input example" />
-                <input class="weight" type="text" placeholder="Enter Weight in lbs"
-                    aria-label="default input example" />
-                <input class="age" type="text" placeholder="Enter Age" aria-label="default input example" />
-                <select name="gender" id="gender">
-                    <option value="none">Select your gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-                <select name="activityLevel" id="activityLevel">
-                    <option value="none">Select your activity level!</option>
-                    <option value="level_1">Light</option>
-                    <option value="level_2">Moderate</option>
-                    <option value="level_3">Heavy</option>
-                </select>
-                <button class="calcBmiBtn btn-primary">
-                    Calculate your next steps!
-                </button>
-            </div>
-        <section class="hidden" id="bmiResults" data-state="hidden">
-            <p id="metabolicRate"></p>
-            <p id="gainWeight"></p>
-            <p id="loseWeight"></p>
-            <p id="maintainWeight"></p>
-        </section>
-        <div class="row" id="bmiResDiv"></div>
-    </div>
-    </div>
 
-    <div class="container calInput d-flex justify-content-center">
-        <div class="row d-flex justify-content-center">
-            <div class="col-12">
-                <h2>Input your data below to see your calories burned!</h2>
-                <select name="activity" id="activity">
-                    <option value="">Select an activity!</option>
-                    <option value="run">Run</option>
-                    <option value="lifting">Weight Lifting</option>
-                    <option value="yoga">Yoga</option>
-                    <option value="cycling">Cycling</option>
-                    <option value="soccer">Soccer</option>
-                    <option value="tennis">Tennis</option>
-                    <option value="basketball">Basketball</option>
-                    <option value="boxing">Boxing</option>
-                </select>
-                <input class="actWeight" type="text" placeholder="Enter Weight in LBs"
-                    aria-label="default input example" />
-                <input class="duration" type="text" placeholder="Enter duration in minutes"
-                    aria-label="default input example" />
-                <button class="calBurnBtn btn-primary" id="calBurnBtn">
-                    Calculate!
-                </button>
+    <main class="container justify-content-center">
+        <header class="container">
+
+            <img src="./assets/images/GETFITLOGO.png" alt="get fit logo">
+            <h1>GET FIT</h1>
+            <img src="./assets/images/GETFITLOGO.png" alt="get fit logo">
+
+        </header>
+        <div class="container bmiInput d-flex justify-content-center">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12">
+                    <h2>
+                        Input your data below to see how to achieve your weight goals!
+                    </h2>
+                    <input class="height" type="text" placeholder="Enter Height in cm"
+                        aria-label="default input example" />
+                    <input class="weight" type="text" placeholder="Enter Weight in lbs"
+                        aria-label="default input example" />
+                    <input class="age" type="text" placeholder="Enter Age" aria-label="default input example" />
+                    <select name="gender" id="gender">
+                        <option value="none">Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <select name="activityLevel" id="activityLevel">
+                        <option value="none">Select your activity level!</option>
+                        <option value="level_1">Light</option>
+                        <option value="level_2">Moderate</option>
+                        <option value="level_3">Heavy</option>
+                    </select>
+                    <button class="calcBmiBtn btn-primary">
+                        Calculate your next steps!
+                    </button>
+                </div>
+                <section class="hidden" id="bmiResults" data-state="hidden">
+                    <p id="metabolicRate"></p>
+                    <p id="gainWeight"></p>
+                    <p id="loseWeight"></p>
+                    <p id="maintainWeight"></p>
+                </section>
             </div>
-            <section class="hidden" id="calResults" data-state="hidden">
-                <p id="calAnHour"></p>
-                <p id="durrationAct"></p>
-                <p id="totalCal"></p>
-            </section>
         </div>
-    </div>
+
+        <div class="container calInput d-flex justify-content-center">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12">
+                    <h2>Input your data below to see your calories burned!</h2>
+                    <select name="activity" id="activity">
+                        <option value="">Select an activity!</option>
+                        <option value="run">Run</option>
+                        <option value="lifting">Weight Lifting</option>
+                        <option value="yoga">Yoga</option>
+                        <option value="cycling">Cycling</option>
+                        <option value="soccer">Soccer</option>
+                        <option value="tennis">Tennis</option>
+                        <option value="basketball">Basketball</option>
+                        <option value="boxing">Boxing</option>
+                    </select>
+                    <input class="actWeight" type="text" placeholder="Enter Weight in LBs"
+                        aria-label="default input example" />
+                    <input class="duration" type="text" placeholder="Enter duration in minutes"
+                        aria-label="default input example" />
+                    <button class="calBurnBtn btn-primary" id="calBurnBtn">
+                        Calculate!
+                    </button>
+                </div>
+                <section class="hidden" id="calResults" data-state="hidden">
+                    <p id="calAnHour"></p>
+                    <p id="durrationAct"></p>
+                    <p id="totalCal"></p>
+                </section>
+            </div>
+        </div>
+    </main>
     <script src="./assets/js/script.js"></script>
 </body>
 

@@ -1,65 +1,78 @@
-:root{
---gunmetal: #2D3142;
---silver: #BFC0C0;
---white: #FFFFFF;
---coral: #EF8354;
---payne: #4F5D75;
+:root {
+    --gunmetal: #2D3142;
+    --silver: #BFC0C0;
+    --white: #FFFFFF;
+    --coral: #EF8354;
+    --payne: #4F5D75;
 }
 
 
 
-body{
+body {
     font-family: 'Orbitron', sans-serif;
-    background-color: var(--silver);
+    background-color: var(--coral);
 }
 
-h1{
+header {
     display: flex;
-    color: var(--coral);
+    flex-direction: row;
+    justify-content: center;
+}
+
+h1 {
+    display: flex;
+    color: var(--gunmetal);
     justify-content: center;
     padding: 5px;
-    margin: 5px;
+    margin-top: 110px;
 }
 
-.bmiInput{
+img {
+    text-align: center;
+    height: 25%;
+    width: 25%;
+}
+
+.bmiInput {
     display: flex;
-    color: var(--coral);
+    color: var(--gunmetal);
     border: var(--gunmetal) solid 5px;
     border-radius: 25px;
     padding: 10px;
     margin: 10px;
 }
 
-#bmiResults{
+#bmiResults {
     text-align: center;
-    color: var(--coral);
+    color: var(--gunmetal);
     border: white 10px solid;
     border-radius: 25px;
     padding: 7px;
-    margin: 10px;
+    margin: 25px;
 }
-.calInput{
-    color: var(--coral);
+
+.calInput {
+    color: var(--gunmetal);
     border: var(--gunmetal) solid 5px;
     border-radius: 25px;
     padding: 15px;
     margin: 10px;
 }
 
-#calResults{
+#calResults {
     text-align: center;
-    color: var(--coral);
+    color: var(--gunmetal);
     border: white 10px solid;
     border-radius: 25px;
     padding: 7px;
     margin: 10px;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.show{
+.show {
     display: block;
     display: flex;
     flex-direction: column;
